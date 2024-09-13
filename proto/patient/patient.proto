@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package patient;
+
+option go_package = "internal/patient";
+
+
+service PatientService {
+    rpc GetPatient (PatientRequest) returns (PatientResponse);
+}
+
+message PatientRequest {
+    string id = 1;
+}
+
+message PatientResponse {
+    string name = 1;
+    int32 age = 2;
+}
